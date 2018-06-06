@@ -1,0 +1,73 @@
+{
+  "name": "IGdm",
+  "version": "2.4.3",
+  "description": "Desktop application for Instagram DMs",
+  "main": "main/main.js",
+  "scripts": {
+    "start": "gulp build && electron .",
+    "pack": "gulp build && build --dir",
+    "dist": "gulp build && build -mwl --x64"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ifedapoolarewaju/igdm.git"
+  },
+  "keywords": [
+    "Instagram",
+    "messaging",
+    "Chat",
+    "DM",
+    "Social Media"
+  ],
+  "author": "ifedapo olarewaju",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "bootstrap": "^4.0.0",
+    "electron-log": "^2.2.6",
+    "electron-updater": "^2.20.2",
+    "fb": "^2.0.0",
+    "instagram-private-api": "github:ifedapoolarewaju/instagram-private-api#e8dc765f3fb1abcfd1349efc8bf2634954cb7853",
+    "node-notifier": "^5.1.2",
+    "nojs": "^0.1.1"
+  },
+  "devDependencies": {
+    "electron": "^2.0.2",
+    "electron-builder": "^19.56.2",
+    "electron-builder-lib": "^20.0.0",
+    "electron-builder-squirrel-windows": "^20.0.0",
+    "gulp": "^4.0.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-pug": "^3.3.0",
+    "jstransformer-markdown-it": "^2.0.0"
+  },
+  "build": {
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "ifedapoolarewaju",
+        "repo": "igdm"
+      }
+    ],
+    "appId": "com.ifedapoolarewaju.desktop.igdm",
+    "copyright": "ifedapo Olarewaju 2017",
+    "mac": {
+      "category": "public.app-category.social-networking"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "publisherName": "ifedapoolarewaju"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "zip",
+        "deb"
+      ],
+      "maintainer": "Ifedapo Olarewaju <ifedapoolarewaju@gmail.com>"
+    }
+  }
+}
